@@ -1,0 +1,150 @@
+/* ===================================
+   Google-Style Minimal Landing Page
+   Clean, Professional, Content-First
+   =================================== */
+
+/* Research Projects Section - Google Minimal */
+.research-projects-section {
+  padding: 120px 0;
+  background: #ffffff;
+}
+
+.research-projects-section .section-header {
+  text-align: center;
+  margin-bottom: 80px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.research-projects-section .section-header h2 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #202124;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.research-projects-section .section-header p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #5f6368;
+  font-weight: 400;
+}
+
+/* Team Section - Google Minimal */
+.team-section {
+  padding: 120px 0;
+  background: #f8f9fa;
+}
+
+.team-section .section-header {
+  text-align: center;
+  margin-bottom: 80px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-section .section-header h2 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #202124;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.team-section .section-header p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #5f6368;
+  font-weight: 400;
+}
+
+.team-section .team-cta {
+  margin-top: 64px;
+  text-align: center;
+}
+
+/* Tech Stack Section - Google Minimal */
+.tech-stack-section {
+  padding: 120px 0;
+  background: #ffffff;
+}
+
+.tech-stack-section .section-header {
+  text-align: center;
+  margin-bottom: 80px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tech-stack-section .section-header h2 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #202124;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.tech-stack-section .section-header p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #5f6368;
+  font-weight: 400;
+}
+
+/* Responsive - Google Style */
+@media (max-width: 1024px) {
+  .research-projects-section,
+  .team-section,
+  .tech-stack-section {
+    padding: 96px 0;
+  }
+
+  .research-projects-section .section-header,
+  .team-section .section-header,
+  .tech-stack-section .section-header {
+    margin-bottom: 64px;
+  }
+
+  .research-projects-section .section-header h2,
+  .team-section .section-header h2,
+  .tech-stack-section .section-header h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .research-projects-section,
+  .team-section,
+  .tech-stack-section {
+    padding: 80px 0;
+  }
+
+  .research-projects-section .section-header,
+  .team-section .section-header,
+  .tech-stack-section .section-header {
+    margin-bottom: 56px;
+    padding: 0 20px;
+  }
+
+  .research-projects-section .section-header h2,
+  .team-section .section-header h2,
+  .tech-stack-section .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .research-projects-section .section-header p,
+  .team-section .section-header p,
+  .tech-stack-section .section-header p {
+    font-size: 1rem;
+  }
+}

@@ -243,42 +243,50 @@ const Nav = () => {
               </div>
               <div className="link">
                 <a
-                  href="/gioi-thieu"
-                  onClick={(e) => handleLinkClick(e, "/gioi-thieu")}
+                  href="/about"
+                  onClick={(e) => handleLinkClick(e, "/about")}
                 >
-                  <h2>Về trường</h2>
+                  <h2>Về Lab</h2>
                 </a>
               </div>
               <div className="link">
                 <a
-                  href="/su-kien"
-                  onClick={(e) => handleLinkClick(e, "/su-kien")}
+                  href="/research"
+                  onClick={(e) => handleLinkClick(e, "/research")}
                 >
-                  <h2>Sự kiện</h2>
+                  <h2>Nghiên cứu</h2>
                 </a>
               </div>
               <div className="link">
                 <a
-                  href="/tam-nhin"
-                  onClick={(e) => handleLinkClick(e, "/tam-nhin")}
+                  href="/team"
+                  onClick={(e) => handleLinkClick(e, "/team")}
                 >
-                  <h2>Tầm nhìn</h2>
+                  <h2>Đội ngũ</h2>
                 </a>
               </div>
               <div className="link">
                 <a
-                  href="/thu-vien"
-                  onClick={(e) => handleLinkClick(e, "/thu-vien")}
+                  href="/publications"
+                  onClick={(e) => handleLinkClick(e, "/publications")}
                 >
-                  <h2>Thư viện</h2>
+                  <h2>Công trình</h2>
                 </a>
               </div>
               <div className="link">
                 <a
-                  href="/tham-gia"
-                  onClick={(e) => handleLinkClick(e, "/tham-gia")}
+                  href="/resources"
+                  onClick={(e) => handleLinkClick(e, "/resources")}
                 >
-                  <h2>Tham dự</h2>
+                  <h2>Tài nguyên</h2>
+                </a>
+              </div>
+              <div className="link">
+                <a
+                  href="/contact"
+                  onClick={(e) => handleLinkClick(e, "/contact")}
+                >
+                  <h2>Liên hệ</h2>
                 </a>
               </div>
             </div>
@@ -287,22 +295,24 @@ const Nav = () => {
             <div className="socials">
               <div className="sub-col">
                 <div className="menu-meta menu-commissions">
-                  <p>Liên hệ</p>
-                  <p>info@vimaru.edu.vn</p>
+                  <p>Liên hệ Lab</p>
+                  <p>lab@vmu.edu.vn</p>
                   <p>0225.3.747.024</p>
                 </div>
                 <div className="menu-meta">
-                  <p>Địa chỉ trường</p>
-                  <p>484 Lạch Tray</p>
-                  <p>Ngô Quyền, Hải Phòng</p>
+                  <p>Địa chỉ</p>
+                  <p>Phòng Lab CNTT</p>
+                  <p>Trường ĐH Hàng hải Việt Nam</p>
+                  <p>484 Lạch Tray, Hải Phòng</p>
                 </div>
               </div>
               <div className="sub-col">
                 <div className="menu-meta">
-                  <p>Mạng xã hội</p>
-                  <p>Facebook</p>
-                  <p>YouTube</p>
+                  <p>Kết nối</p>
+                  <p>GitHub</p>
                   <p>LinkedIn</p>
+                  <p>Facebook</p>
+                  <p>Email</p>
                 </div>
               </div>
             </div>

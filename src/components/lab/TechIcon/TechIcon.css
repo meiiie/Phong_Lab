@@ -1,0 +1,137 @@
+.tech-icon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.25s ease;
+}
+
+/* Icon Container */
+.tech-icon-container {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #e8eaed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.tech-icon:hover .tech-icon-container {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.06);
+  border-color: #1a73e8;
+}
+
+/* Icon Image */
+.tech-icon-image {
+  color: rgba(0, 0, 0, 0.4);
+  transition: all 0.25s ease;
+}
+
+.tech-icon:hover .tech-icon-image {
+  color: var(--icon-color, #0074D9);
+  transform: scale(1.1);
+}
+
+/* Label */
+.tech-icon-label {
+  font-family: 'Be Vietnam Pro', 'Inter', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  transition: color 0.25s ease;
+  max-width: 100px;
+  line-height: 1.3;
+}
+
+.tech-icon:hover .tech-icon-label {
+  color: #1a232c;
+}
+
+/* Tooltip */
+.tech-icon-tooltip {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  pointer-events: none;
+  animation: tooltipFadeIn 0.2s ease;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.tooltip-content {
+  background: rgba(26, 35, 44, 0.98);
+  backdrop-filter: blur(12px);
+  color: #ffffff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+  min-width: 200px;
+  max-width: 280px;
+}
+
+.tooltip-content::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: rgba(26, 35, 44, 0.98);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.tooltip-content strong {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.tooltip-content p {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tech-icon-container {
+    width: 64px;
+    height: 64px;
+  }
+
+  .tech-icon-label {
+    font-size: 0.75rem;
+  }
+
+  .tech-icon-tooltip {
+    display: none; /* Hide tooltips on mobile */
+  }
+}

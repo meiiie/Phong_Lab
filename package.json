@@ -1,11 +1,11 @@
 {
-  "name": "vmu-70-nam-kiniem",
+  "name": "vmu-research-lab",
   "version": "1.0.0",
   "private": true,
-  "description": "Website kỷ niệm 70 năm Trường Đại học Hàng hải Việt Nam (1956-2026)",
-  "keywords": ["VMU", "kỷ niệm 70 năm", "hàng hải", "đại học", "6/9/2025"],
-  "author": "The Wiii Lab",
-  "homepage": "https://kiniem70nam.vmu.holihu.online",
+  "description": "VMU Student Research Lab - Lab Nghiên Cứu Khoa Học Sinh Viên VMU",
+  "keywords": ["VMU", "research lab", "student research", "CNTT", "IT research"],
+  "author": "VMU Research Lab Team",
+  "homepage": "https://lab.vmu.edu.vn",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

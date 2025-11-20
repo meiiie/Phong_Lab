@@ -14,17 +14,14 @@ import CustomEase from "gsap/CustomEase";
 import Nav from "@/components/Nav/Nav";
 import ConditionalFooter from "@/components/ConditionalFooter/ConditionalFooter";
 import AnimatedButton from "@/components/AnimatedButton/AnimatedButton";
-import CTAWindow from "@/components/CTAWindow/CTAWindow";
-import Copy from "@/components/Copy/Copy";
-import VimaruTitle from "@/components/VimaruTitle/VimaruTitle";
+import HeroLab from "@/components/lab/HeroLab/HeroLab";
+import ProjectsGrid from "@/components/lab/ProjectsGrid/ProjectsGrid";
+import TeamGrid from "@/components/lab/TeamGrid/TeamGrid";
 import CounterAnimation from "@/components/CounterAnimation/CounterAnimation";
-import ClientOnly from "@/components/ClientOnly/ClientOnly";
-import CountdownTimer from "@/components/CountdownTimer/CountdownTimer";
-import Timeline from "@/components/Timeline/Timeline";
-import AnniversaryProgram from "@/components/AnniversaryProgram/AnniversaryProgram";
-import FeaturedAchievements from "@/components/FeaturedAchievements/FeaturedAchievements";
-import CommunityVoices from "@/components/CommunityVoices/CommunityVoices";
-import GalleryCallout from "@/components/GalleryCallout/GalleryCallout";
+import { researchProjects, researchAreas } from "@/data/research-projects";
+import { teamMembers } from "@/data/team-members";
+import { techStack } from "@/data/tech-stack";
+import TechStackGrid from "@/components/lab/TechStackGrid/TechStackGrid";
 
 
 let isInitialLoad = true;
@@ -229,25 +226,243 @@ export default function Home() {
     }
   }, [showPreloader]);
 
+  // Advanced GSAP ScrollTrigger animations for professional layout
   useEffect(() => {
-      if (!tagsRef.current) return;
+    if (!isClient) return;
 
-      const tags = tagsRef.current.querySelectorAll(".what-we-do-tag");
-      gsap.set(tags, { opacity: 0, x: -40 });
+    // 1. Section Headers with Split Text Effect
+    const sectionHeaders = gsap.utils.toArray(".section-header");
+    sectionHeaders.forEach((header) => {
+      const h2 = header.querySelector("h2");
+      const p = header.querySelector("p");
+      
+      // Animate header title with clip-path reveal
+      if (h2) {
+        gsap.fromTo(
+          h2,
+          {
+            opacity: 0,
+            clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+          },
+          {
+            opacity: 1,
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: header,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        );
+      }
+      
+      // Animate description with fade and slide
+      if (p) {
+        gsap.fromTo(
+          p,
+          {
+            opacity: 0,
+            y: 20,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            delay: 0.3,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: header,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        );
+      }
+    });
 
-      ScrollTrigger.create({
-        trigger: tagsRef.current,
+    // 2. Research Projects Section with Parallax
+    const researchSection = document.querySelector(".research-projects-section");
+    if (researchSection) {
+      // Parallax background effect
+      gsap.to(researchSection, {
+        backgroundPosition: "50% 100px",
+        ease: "none",
+        scrollTrigger: {
+          trigger: researchSection,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+    }
+
+    // 3. Project Cards with Subtle Fade-in
+    const projectCards = gsap.utils.toArray(".project-card");
+    if (projectCards.length > 0) {
+      gsap.set(projectCards, { 
+        opacity: 0, 
+        y: 20,
+      });
+      
+      ScrollTrigger.batch(projectCards, {
         start: "top 90%",
         once: true,
-        animation: gsap.to(tags, {
+        onEnter: (batch) => {
+          gsap.to(batch, {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            stagger: 0.08,
+            ease: "power2.out",
+          });
+        },
+      });
+    }
+
+    // 4. Team Section with Parallax Background
+    const teamSection = document.querySelector(".team-section");
+    if (teamSection) {
+      // Parallax background effect
+      const teamBg = teamSection.querySelector(".team-section-bg");
+      if (teamBg) {
+        gsap.to(teamBg, {
+          y: -100,
+          ease: "none",
+          scrollTrigger: {
+            trigger: teamSection,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1,
+          },
+        });
+      }
+    }
+
+    // 5. Team Role Headers with Line Animation
+    const roleHeaders = gsap.utils.toArray(".team-role-header");
+    roleHeaders.forEach((header) => {
+      // Create animated underline
+      const underline = document.createElement("div");
+      underline.className = "role-header-underline";
+      header.appendChild(underline);
+      
+      gsap.fromTo(
+        header,
+        {
+          opacity: 0,
+          x: -40,
+        },
+        {
           opacity: 1,
           x: 0,
           duration: 0.8,
-          stagger: 0.1,
           ease: "power3.out",
-        }),
+          scrollTrigger: {
+            trigger: header,
+            start: "top 90%",
+            once: true,
+          },
+        }
+      );
+      
+      // Animate underline
+      gsap.fromTo(
+        underline,
+        {
+          scaleX: 0,
+          transformOrigin: "left center",
+        },
+        {
+          scaleX: 1,
+          duration: 0.8,
+          delay: 0.3,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: header,
+            start: "top 90%",
+            once: true,
+          },
+        }
+      );
+    });
+
+    // 6. Team Member Cards with Subtle Fade-in
+    const teamCards = gsap.utils.toArray(".team-member-card");
+    if (teamCards.length > 0) {
+      gsap.set(teamCards, { 
+        opacity: 0, 
+        y: 20,
       });
-  }, []);
+      
+      ScrollTrigger.batch(teamCards, {
+        start: "top 90%",
+        once: true,
+        onEnter: (batch) => {
+          gsap.to(batch, {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            stagger: 0.06,
+            ease: "power2.out",
+          });
+        },
+      });
+    }
+
+    // 7. CTA Buttons with Subtle Fade-in
+    const ctaButtons = gsap.utils.toArray(".team-cta");
+    ctaButtons.forEach((cta) => {
+      gsap.fromTo(
+        cta,
+        {
+          opacity: 0,
+          y: 10,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: cta,
+            start: "top 95%",
+            once: true,
+          },
+        }
+      );
+    });
+
+    // 8. Tech Stack Icons with Category Stagger
+    const techCategories = gsap.utils.toArray(".tech-category-section");
+    techCategories.forEach((category) => {
+      const icons = category.querySelectorAll(".tech-icon");
+      
+      if (icons.length > 0) {
+        gsap.set(icons, { opacity: 0, y: 20 });
+        
+        ScrollTrigger.create({
+          trigger: category,
+          start: "top 85%",
+          once: true,
+          onEnter: () => {
+            gsap.to(icons, {
+              opacity: 1,
+              y: 0,
+              duration: 0.5,
+              stagger: 0.05,
+              ease: "power2.out",
+            });
+          },
+        });
+      }
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, [isClient]);
 
   return (
     <>
@@ -317,86 +532,19 @@ export default function Home() {
       )}
       <Nav />
       
-      {/* Hero Main Section */}
-      <section className="hero-main">
-        <div className="hero-main-bg">
-          <img src="/home/hero.jpg" alt="VMU Campus" />
-        </div>
-        <div className="hero-main-overlay"></div>
-        <div className="hero-main-content">
-          <VimaruTitle 
-            delay={0.85} 
-            showPreloader={showPreloader}
-          />
-        </div>
-      </section>
-
-      {/* Coming Section */}
-      <section className="coming-section">
-        <div className="coming-bg"></div>
-        <div className="coming-content">
-          <div className="coming-logo">
-            <img src="/logos/vimaru-logo.svg" alt="VMU Logo" />
-          </div>
-          <Copy animateOnScroll={false} delay={showPreloader ? 10.1 : 0.95}>
-            <h2 className="coming-text">Coming<br/>April 1<br/>2026</h2>
-          </Copy>
-          <div className="coming-platforms">
-            <div className="coming-platform">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
-              <span>Việt Nam</span>
-            </div>
-            <div className="coming-platform">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
-              <span>Hải Phòng</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Countdown Section */}
-      <section className="countdown-section">
-        <div className="countdown-bg-pattern"></div>
-        <div className="countdown-content">
-          <div className="countdown-header">
-            <Copy animateOnScroll={false} delay={showPreloader ? 10.15 : 1}>
-              <h1 className="countdown-main-title">Trường Đại Học Hàng Hải Việt Nam</h1>
-              <h2 className="countdown-subtitle">Kỷ Niệm 70 Năm</h2>
-            </Copy>
-          </div>
-          
-          <CountdownTimer />
-          
-          <Copy animateOnScroll={false} delay={showPreloader ? 10.2 : 1.05}>
-            <p className="countdown-message">
-              Chúng ta sẽ cùng nhau khám phá những cột mốc lịch sử, thành tựu 
-              nổi bật và tầm nhìn tương lai của trường.
-            </p>
-          </Copy>
-          
-          <div className="countdown-buttons-container">
-            <div className="hero-buttons">
-              <AnimatedButton
-                label="Khám phá lịch sử"
-                route="/70-nam"
-                animateOnScroll={false}
-                delay={showPreloader ? 10.3 : 1.15}
-              />
-              <AnimatedButton
-                label="Đăng ký tham gia"
-                route="/connect"
-                animateOnScroll={false}
-                delay={showPreloader ? 10.45 : 1.3}
-                secondary={true}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Lab Section - Neo-futuristic Research Lab Hero */}
+      <HeroLab
+        title="Kiến tạo tương lai Khoa học Hàng Hải"
+        tagline="Lab Nghiên Cứu Khoa Học Sinh Viên VMU"
+        mission="Trao quyền cho sinh viên CNTT thông qua nghiên cứu tiên tiến và đổi mới sáng tạo"
+        ctaLabel="Tham Gia Lab"
+        ctaLink="/contact"
+        ctaSecondaryLabel="Tìm Hiểu Đề Tài"
+        ctaSecondaryLink="/research"
+        particleCount={100}
+        particleColor="#0074D9"
+        showPreloader={showPreloader}
+      />
 
       {/* Hero Stats */}
       <section className="hero-stats">
@@ -475,28 +623,78 @@ export default function Home() {
 
 
 
-      {/* Lịch sử và cột mốc */}
-      <Timeline />
+      {/* Dự án nghiên cứu */}
+      <section className="research-projects-section">
+        <div className="container">
+          <div className="section-header">
+            <h2>Dự Án Nghiên Cứu</h2>
+            <p>Khám phá các dự án nghiên cứu đang được thực hiện bởi sinh viên và giảng viên của lab</p>
+          </div>
+          <ProjectsGrid
+            projects={researchProjects}
+            filterOptions={{
+              areas: researchAreas,
+              statuses: ['ongoing', 'completed']
+            }}
+            columns={{ desktop: 3, tablet: 2, mobile: 1 }}
+          />
+        </div>
+      </section>
 
-      {/* Chương trình kỷ niệm */}
-      <AnniversaryProgram />
+      {/* Đội ngũ Lab */}
+      <section className="team-section">
+        <div className="container">
+          <div className="section-header">
+            <h2>Đội Ngũ Lab</h2>
+            <p>Gặp gỡ các thành viên tài năng của Lab Nghiên Cứu Khoa Học Sinh Viên VMU</p>
+          </div>
+          <TeamGrid
+            members={teamMembers}
+            groupByRole={true}
+            columns={{ desktop: 4, tablet: 2, mobile: 1 }}
+          />
+          <div className="team-cta">
+            <AnimatedButton
+              text="Tham Gia Đội Ngũ"
+              href="/contact"
+              variant="primary"
+            />
+          </div>
+        </div>
+      </section>
 
-      {/* Thành tựu nổi bật */}
-      <FeaturedAchievements />
+      {/* Công nghệ sử dụng */}
+      <section className="tech-stack-section">
+        <div className="container">
+          <div className="section-header">
+            <h2>Công Nghệ Sử Dụng</h2>
+            <p>Các công nghệ và công cụ mà lab sử dụng trong nghiên cứu và phát triển</p>
+          </div>
+          <TechStackGrid techStack={techStack} />
+        </div>
+      </section>
 
-      {/* Tiếng nói từ cộng đồng */}
-      <CommunityVoices />
-
-      {/* Thư viện hình ảnh */}
-      <GalleryCallout />
-
-      {/* Call to Action */}
-      <CTAWindow
-        img="/home/home-cta-window.jpg"
-        header="Tham gia kỷ niệm 70 năm"
-        callout="Cùng chúng tôi kỷ niệm một cột mốc quan trọng"
-        description="Đăng ký tham gia các hoạt động kỷ niệm 70 năm thành lập trường Đại học Hàng hải Việt Nam. Hãy để lại thông tin để nhận thông báo về các sự kiện sắp tới."
-      />
+      {/* Call to Action - Simple */}
+      <section className="cta-section">
+        <div className="container">
+          <div className="cta-content">
+            <h2>Sẵn sàng tham gia?</h2>
+            <p>Hãy trở thành một phần của Lab Nghiên Cứu Khoa Học Sinh Viên VMU</p>
+            <div className="cta-buttons">
+              <AnimatedButton
+                text="Tham Gia Ngay"
+                href="/contact"
+                variant="primary"
+              />
+              <AnimatedButton
+                text="Tìm Hiểu Thêm"
+                href="/about"
+                variant="secondary"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
       
       <ConditionalFooter />
     </>

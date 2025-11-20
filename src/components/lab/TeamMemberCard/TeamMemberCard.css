@@ -1,0 +1,223 @@
+.team-member-card {
+  background: #ffffff;
+  border: 1px solid #e8eaed;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.team-member-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.06);
+  border-color: #1a73e8;
+}
+
+/* Photo */
+.team-member-photo {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(180deg, #f8f9fa 0%, #f1f3f4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+  transition: background 0.25s ease;
+}
+
+.team-member-card:hover .team-member-photo {
+  background: linear-gradient(180deg, #f1f3f4 0%, #e8eaed 100%);
+}
+
+.team-member-photo-placeholder {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.24);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.team-member-card:hover .team-member-photo-placeholder {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  color: rgba(0, 116, 217, 0.6);
+}
+
+.team-member-role-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 14px;
+  border-radius: 16px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  z-index: 3;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(8px);
+}
+
+.team-member-card:hover .team-member-role-badge {
+  transform: translateX(-50%) translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+}
+
+/* Content */
+.team-member-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.team-member-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #1a232c;
+  margin: 0;
+  text-align: center;
+}
+
+.team-member-major {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: #5f6d7a;
+  margin: 0;
+  text-align: center;
+}
+
+/* Research Interests */
+.team-member-interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.interest-tag {
+  padding: 4px 10px;
+  background: rgba(0, 116, 217, 0.1);
+  color: #0074D9;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.interest-more {
+  padding: 4px 10px;
+  background: #e8eaed;
+  color: #8b95a1;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Stats */
+.team-member-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #e8eaed;
+  margin-top: auto;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #8b95a1;
+  font-size: 0.875rem;
+}
+
+.stat-item svg {
+  color: #8b95a1;
+}
+
+/* Social Links */
+.team-member-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding-top: 12px;
+}
+
+.team-member-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f1f3f4;
+  color: #5f6d7a;
+  transition: all 0.2s ease;
+}
+
+.team-member-social a:hover {
+  background: #0074D9;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-member-photo {
+    height: 180px;
+  }
+
+  .team-member-photo-placeholder {
+    width: 64px;
+    height: 64px;
+  }
+
+  .team-member-content {
+    padding: 16px;
+  }
+
+  .team-member-name {
+    font-size: 1rem;
+  }
+
+  .team-member-major {
+    font-size: 0.8125rem;
+  }
+
+  .team-member-stats {
+    gap: 12px;
+  }
+
+  .stat-item {
+    font-size: 0.8125rem;
+  }
+}

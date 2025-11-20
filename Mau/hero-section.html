@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VMU Science Lab - Maritime Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Bảng màu Hàng Hải & Công Nghệ */
+            --maritime-navy: #003B73; /* Xanh hải quân đậm */
+            --tech-cyan: #00D4FF;     /* Xanh công nghệ sáng */
+            --ocean-blue: #0074D9;    /* Xanh đại dương */
+            
+            --text-main: #1a232c;     /* Đen xám than */
+            --text-sub: #5f6d7a;      /* Xám trung tính */
+            --bg-color: #ffffff;      /* Trắng sạch */
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            overflow-x: hidden;
+            color: var(--text-main);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* --- CANVAS BACKGROUND --- */
+        #canvas-container {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1; /* Nằm dưới cùng */
+        }
+
+        /* --- WELCOME SECTION (Google Antigravity Layout) --- */
+        .welcome-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            z-index: 10;
+        }
+
+        /* 1. LOGO AREA */
+        .logo-container {
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease-out forwards 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--maritime-navy);
+        }
+        
+        .logo-icon svg {
+            width: 40px;
+            height: 40px;
+            color: var(--maritime-navy);
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        /* 2. HEADLINE (Giống mẫu: to, chia dòng) */
+        .landing-main-header {
+            font-size: clamp(3rem, 6vw, 5.5rem); /* Responsive font */
+            line-height: 1.1;
+            font-weight: 800;
+            letter-spacing: -2px;
+            color: var(--text-main);
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease-out forwards 0.4s;
+        }
+
+        .landing-main-header span {
+            display: block; /* Xuống dòng từng đoạn */
+        }
+        
+        /* Dòng 2 highlight màu Xanh Hàng Hải */
+        .landing-main-header span:last-child {
+            background: linear-gradient(90deg, var(--maritime-navy) 0%, var(--ocean-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 3. BUTTONS CTA */
+        .welcome-cta {
+            display: flex;
+            gap: 16px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease-out forwards 0.6s;
+        }
+
+        .button {
+            padding: 14px 32px;
+            border-radius: 50px; /* Bo tròn kiểu viên thuốc giống mẫu */
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            border: none;
+        }
+
+        /* Nút chính: Màu Navy đậm (Chất Hàng Hải) */
+        .button-primary {
+            background-color: var(--maritime-navy);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 59, 115, 0.3);
+        }
+
+        .button-primary:hover {
+            background-color: #002a52;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 59, 115, 0.4);
+        }
+
+        /* Nút phụ: Màu xám nhạt */
+        .button-secondary {
+            background-color: #f1f3f4;
+            color: var(--text-main);
+        }
+
+        .button-secondary:hover {
+            background-color: #e8eaed;
+        }
+
+        /* --- ANIMATION KEYFRAMES --- */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .welcome-cta { flex-direction: column; width: 100%; }
+            .button { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Canvas Background -->
+    <div id="canvas-container">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <!-- Main Content (Antigravity Structure) -->
+    <section class="welcome-wrapper">
+        
+        <!-- 1. Logo Container -->
+        <div class="logo-container">
+            <div class="logo-icon">
+                <!-- Icon Mỏ neo cách điệu (SVG Clean) -->
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="5" r="3"></circle>
+                    <line x1="12" y1="22" x2="12" y2="8"></line>
+                    <path d="M5 12H2a10 10 0 0 0 20 0h-3"></path>
+                </svg>
+            </div>
+            <div class="logo-text">VMU Science Lab</div>
+        </div>
+
+        <!-- 2. Headline -->
+        <h1 class="landing-main-header">
+            <span>Kiến tạo tương lai</span>
+            <span>Khoa học Hàng Hải</span>
+        </h1>
+
+        <!-- 3. CTA Buttons -->
+        <div class="welcome-cta">
+            <a href="#" class="button button-primary">
+                <!-- Icon Windows (Giữ nguyên từ mẫu của bạn) -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M0 3.44L9.28 2.14V11.56H0V3.44ZM9.28 12.44V21.86L0 20.56V12.44H9.28ZM10.46 1.97L24 0V11.56H10.46V1.97ZM24 12.44V24L10.46 22.03V12.44H24Z"/></svg>
+                Tham gia Lab
+            </a>
+            <a href="#" class="button button-secondary">
+                Tìm hiểu đề tài
+            </a>
+        </div>
+
+    </section>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        let particles = [];
+        let mouse = { x: -1000, y: -1000 };
+        let time = 0;
+
+        // CẤU HÌNH HIỆU ỨNG (Tinh chỉnh cho Hàng Hải & Tech)
+        const CONFIG = {
+            spacing: 35,          // Lưới thoáng
+            baseRadius: 1.5,      // Hạt nhỏ
+            mouseRadius: 250,     // Vùng tương tác rộng
+            
+            // Màu sắc:
+            // colorBase: Xám xanh nhạt (Mặt biển tĩnh)
+            colorBase: 'rgba(100, 116, 139, 0.2)', 
+            // colorActive: Xanh dương + Cyan (Công nghệ)
+            colorActive: 'rgba(0, 116, 217, 1)', 
+            
+            waveSpeed: 0.015,     // Sóng trôi chậm
+            waveAmp: 10,          // Biên độ sóng nhẹ
+            spring: 0.06,         // Độ nảy (Vật lý)
+            friction: 0.92        // Độ trượt (Inertia)
+        };
+
+        class Particle {
+            constructor(x, y) {
+                this.originX = x;
+                this.originY = y;
+                this.x = x;
+                this.y = y;
+                this.vx = 0;
+                this.vy = 0;
+                this.radius = CONFIG.baseRadius;
+                this.color = CONFIG.colorBase;
+            }
+
+            update() {
+                // 1. HIỆU ỨNG SÓNG NỀN (Living Ambient)
+                // Tạo cảm giác bồng bềnh như trên biển
+                const wave = Math.sin(time + (this.originX * 0.01) + (this.originY * 0.01)) * CONFIG.waveAmp;
+                const targetX = this.originX + wave * 0.5; 
+                const targetY = this.originY + wave * 0.5;
+
+                // 2. TƯƠNG TÁC CHUỘT
+                const dx = mouse.x - this.x;
+                const dy = mouse.y - this.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                let force = 0;
+                let angle = 0;
+                let activeScale = 0;
+
+                if (distance < CONFIG.mouseRadius) {
+                    force = (CONFIG.mouseRadius - distance) / CONFIG.mouseRadius;
+                    angle = Math.atan2(dy, dx);
+                    
+                    // Đẩy hạt ra nhẹ (Tạo hiệu ứng nước rẽ ra)
+                    const push = force * 20;
+                    this.vx -= Math.cos(angle) * push * 0.05;
+                    this.vy -= Math.sin(angle) * push * 0.05;
+
+                    // Phóng to khi hover
+                    activeScale = force * 3.5;
+
+                    // Đổi màu: Càng gần càng xanh đậm (Tech active)
+                    if(force > 0.2) {
+                        this.color = CONFIG.colorActive;
+                    } else {
+                        this.color = CONFIG.colorBase;
+                    }
+                } else {
+                    // Trả về màu gốc
+                    this.color = CONFIG.colorBase;
+                }
+
+                // 3. VẬT LÝ (Spring Force về vị trí sóng)
+                const springX = (targetX - this.x) * CONFIG.spring;
+                const springY = (targetY - this.y) * CONFIG.spring;
+
+                this.vx += springX;
+                this.vy += springY;
+                
+                // Ma sát
+                this.vx *= CONFIG.friction;
+                this.vy *= CONFIG.friction;
+
+                // Cập nhật tọa độ
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Cập nhật kích thước (Mượt mà)
+                const targetRadius = CONFIG.baseRadius + activeScale;
+                this.radius += (targetRadius - this.radius) * 0.1;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = width * dpr;
+            canvas.height = height * dpr;
+            ctx.scale(dpr, dpr);
+            canvas.style.width = width + 'px';
+            canvas.style.height = height + 'px';
+
+            particles = [];
+            // Tạo lưới so le (Hexagonal look) cho tự nhiên hơn
+            for (let y = 0; y < height + CONFIG.spacing; y += CONFIG.spacing) {
+                for (let x = 0; x < width + CONFIG.spacing; x += CONFIG.spacing) {
+                    // Dòng lẻ dịch sang một chút
+                    const offsetX = (y % (CONFIG.spacing * 2) === 0) ? 0 : CONFIG.spacing / 2;
+                    particles.push(new Particle(x + offsetX, y));
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            time += CONFIG.waveSpeed;
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+        
+        window.addEventListener('mouseleave', () => {
+            mouse.x = -1000;
+            mouse.y = -1000;
+        });
+
+        window.addEventListener('resize', init);
+        init();
+        animate();
+
+    </script>
+</body>
+</html>

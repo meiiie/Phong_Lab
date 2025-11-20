@@ -1152,3 +1152,49 @@
 }
 
 
+
+/* ============================================
+   RESEARCH PROJECTS SECTION
+   ============================================ */
+.research-projects-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.research-projects-section .section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.research-projects-section .section-header h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #1a232c;
+  margin-bottom: 16px;
+}
+
+.research-projects-section .section-header p {
+  font-size: 1.125rem;
+  color: #5f6d7a;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .research-projects-section {
+    padding: 60px 0;
+  }
+
+  .research-projects-section .section-header {
+    margin-bottom: 32px;
+  }
+
+  .research-projects-section .section-header h2 {
+    margin-bottom: 12px;
+  }
+
+  .research-projects-section .section-header p {
+    font-size: 1rem;
+  }
+}

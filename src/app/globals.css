@@ -1,3 +1,10 @@
+/* Import Neo-futuristic Lab Theme */
+@import "./lab-theme.css";
+
+/* Import Google Minimal Styles */
+@import "./google-minimal.css";
+
+/* Legacy font imports for compatibility */
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Manrope:wght@200..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=BE+PRO+VIETNAM:wght@300;400;500;600;700&display=swap");
 
@@ -100,14 +107,16 @@ html.lenis {
 }
 
 body {
-  font-family: "BE PRO VIETNAM", "Manrope", sans-serif;
-  background-color: var(--vmu-white);
-  color: var(--vmu-text);
+  font-family: var(--font-primary);
+  background-color: #ffffff;
+  color: #1a232c;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 section,
 .footer {
-  background-color: var(--vmu-white);
+  background-color: #ffffff;
 }
 
 img {
@@ -118,72 +127,82 @@ img {
 }
 
 h1 {
-  font-size: 5rem;
-  font-weight: 500;
-  letter-spacing: -0.25rem;
-  line-height: 1.05;
+  font-family: var(--font-heading);
+  font-size: var(--text-5xl);
+  font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  color: #1a232c;
 }
 
 h2 {
-  font-size: 3.5rem;
-  font-weight: 550;
-  letter-spacing: -0.15rem;
-  line-height: 1.2;
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-snug);
+  color: #1a232c;
 }
 
 h3 {
-  font-size: 2.5rem;
-  font-weight: 500;
-  letter-spacing: -0.075rem;
-  line-height: 1.2;
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-normal);
+  line-height: var(--leading-snug);
+  color: #1a232c;
 }
 
 p {
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.4;
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+  color: #5f6d7a;
 }
 
 p.md {
-  font-size: 1.125rem;
-  font-weight: 500;
-  line-height: 1.4;
+  font-size: var(--text-lg);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-relaxed);
 }
 
 p.lg {
-  font-size: 1.25rem;
-  font-weight: 500;
-  line-height: 1.4;
+  font-size: var(--text-xl);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-relaxed);
 }
 
 p.mono {
   text-transform: uppercase;
-  font-family: "DM Mono";
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wide);
   -webkit-font-smoothing: antialiased;
+  color: #0074D9;
 }
 
 p.md.mono {
-  font-size: 1rem;
+  font-size: var(--text-base);
 }
 
 p.lg.mono {
-  font-size: 1.1rem;
+  font-size: var(--text-lg);
 }
 
 a {
   text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.4;
-  color: var(--vmu-primary);
-  border-radius: 0.35rem;
-  transition: color 0.3s ease;
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-normal);
+  color: #0074D9;
+  border-radius: var(--radius-md);
+  transition: var(--transition-base);
 }
 
 a:hover {
-  color: var(--vmu-secondary);
+  color: #003B73;
 }
 
 span.spacer {
@@ -253,4 +272,295 @@ body.menu-open .menu,
 body.menu-open .menu *,
 body.menu-open .menu-toggle {
   pointer-events: auto;
+}
+
+/* ============================================
+   REDUCED MOTION SUPPORT - Accessibility
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Disable GSAP animations */
+  .gs_reveal,
+  .featured-achievement-card,
+  .timeline-item,
+  .featured-project-card,
+  .community-voice-content {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ============================================
+   FOCUS VISIBLE - Keyboard Navigation
+   ============================================ */
+*:focus-visible {
+  outline: 2px solid #0074D9;
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Remove default focus outline */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ============================================
+   SELECTION STYLING
+   ============================================ */
+::selection {
+  background-color: rgba(0, 116, 217, 0.2);
+  color: #1a232c;
+}
+
+::-moz-selection {
+  background-color: rgba(0, 116, 217, 0.2);
+  color: #1a232c;
+}
+
+/* ============================================
+   SCROLLBAR STYLING - Light Theme
+   ============================================ */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f9fa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4cdd5;
+  border-radius: var(--radius-full);
+  border: 2px solid #f8f9fa;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0074D9;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c4cdd5 #f8f9fa;
+}
+
+/* ===================================
+   Team Section Styles - Google Clean
+   =================================== */
+
+.team-section {
+  padding: 120px 0;
+  background: #f8f9fa;
+  position: relative;
+}
+
+.team-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.team-section .section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.team-section .section-header h2 {
+  font-family: 'Be Vietnam Pro', 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #202124;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.team-section .section-header p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #5f6368;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+.team-section .team-cta {
+  margin-top: 80px;
+  text-align: center;
+}
+
+/* Research Projects Section Styles - Google Clean */
+.research-projects-section {
+  padding: 120px 0;
+  background: #ffffff;
+  position: relative;
+}
+
+.research-projects-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.research-projects-section .section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.research-projects-section .section-header h2 {
+  font-family: 'Be Vietnam Pro', 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #202124;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.research-projects-section .section-header p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #5f6368;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .team-section,
+  .research-projects-section {
+    padding: 60px 0;
+  }
+
+  .team-section .section-header,
+  .research-projects-section .section-header {
+    margin-bottom: 40px;
+  }
+
+  .team-section .section-header h2,
+  .research-projects-section .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .team-section .section-header p,
+  .research-projects-section .section-header p {
+    font-size: 1rem;
+  }
+
+  .team-section .team-cta {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-section,
+  .research-projects-section {
+    padding: 48px 0;
+  }
+
+  .team-section .section-header,
+  .research-projects-section .section-header {
+    margin-bottom: 32px;
+  }
+
+  .team-section .section-header h2,
+  .research-projects-section .section-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .team-section .section-header p,
+  .research-projects-section .section-header p {
+    font-size: 0.9375rem;
+  }
+
+  .team-section .team-cta {
+    margin-top: 32px;
+  }
+}
+
+/* ===================================
+   Tech Stack Section Styles - Google Clean
+   =================================== */
+
+.tech-stack-section {
+  padding: 120px 0;
+  background: #ffffff;
+  position: relative;
+}
+
+.tech-stack-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.tech-stack-section .section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.tech-stack-section .section-header h2 {
+  font-family: 'Be Vietnam Pro', 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #202124;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.tech-stack-section .section-header p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #5f6368;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .tech-stack-section {
+    padding: 80px 0;
+  }
+
+  .tech-stack-section .section-header {
+    margin-bottom: 56px;
+  }
+
+  .tech-stack-section .section-header h2 {
+    font-size: 2.25rem;
+  }
+
+  .tech-stack-section .section-header p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-stack-section {
+    padding: 64px 0;
+  }
+
+  .tech-stack-section .section-header {
+    margin-bottom: 48px;
+  }
+
+  .tech-stack-section .section-header h2 {
+    font-size: 1.875rem;
+  }
+
+  .tech-stack-section .section-header p {
+    font-size: 0.9375rem;
+  }
 }

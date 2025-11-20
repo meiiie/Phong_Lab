@@ -1,229 +1,385 @@
-# 🎓 VMU 70th Anniversary Website
+# 🔬 VMU Student Research Lab
 
-[![Next.js](https://img.shields.io/badge/Next.js-15.4.6-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19.1.0-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
-[![GSAP](https://img.shields.io/badge/GSAP-3.13.0-green?style=for-the-badge&logo=greensock)](https://greensock.com/gsap/)
-[![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel)](https://vercel.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
+**Lab Nghiên Cứu Khoa Học Sinh Viên - Trường Đại học Hàng hải Việt Nam**
 
-> **Chào mừng kỷ niệm 70 năm thành lập Trường Đại học Hàng hải Việt Nam (1956-2026)**  
-> *Sự kiện đặc biệt ngày 6/9/2025 - Lễ công nhận trường trọng điểm quốc gia*
+Website chính thức của Lab Nghiên Cứu Khoa Học Sinh Viên VMU - nơi sinh viên CNTT thực hiện nghiên cứu, phát triển dự án, và đổi mới sáng tạo.
+
+![VMU Research Lab](public/images/lab-hero.png)
 
 ---
 
-## 🌟 **Tổng quan**
+## 📋 Giới Thiệu
 
-Website kỷ niệm 70 năm thành lập Trường Đại học Hàng hải Việt Nam - một dự án đặc biệt được thiết kế để tôn vinh những thành tựu vượt bậc trong 7 thập kỷ đào tạo nguồn nhân lực chất lượng cao cho ngành hàng hải Việt Nam.
+VMU Student Research Lab là phòng lab nghiên cứu khoa học dành cho sinh viên Công Nghệ Thông Tin tại Trường Đại học Hàng hải Việt Nam. Lab được thành lập nhằm:
 
-### 🎯 **Sự kiện chính**
-- **Ngày:** 6 tháng 9, 2025
-- **Địa điểm:** Trường Đại học Hàng hải Việt Nam, Hải Phòng
-- **Nội dung:** Lễ công nhận trường trọng điểm quốc gia về đào tạo, nghiên cứu phục vụ phát triển bền vững kinh tế biển
-
----
-
-## ✨ **Tính năng nổi bật**
-
-### 🎨 **Trải nghiệm người dùng**
-- **Timeline tương tác** - Hành trình 70 năm phát triển với animation mượt mà
-- **Thành tựu nổi bật** - Showcase những dự án và nghiên cứu đột phá
-- **Lịch trình sự kiện** - Chi tiết các hoạt động kỷ niệm
-- **Tầm nhìn tương lai** - Định hướng phát triển và đối tác quốc tế
-- **Đăng ký tham gia** - Form đăng ký trực tuyến cho sự kiện
-
-### 🚀 **Công nghệ tiên tiến**
-- **Next.js 15** - App Router, Server Components, View Transitions
-- **React 19** - Hooks tối ưu, Suspense, Concurrent Features
-- **GSAP 3.13** - Animation chuyên nghiệp, ScrollTrigger, Timeline
-- **Lenis** - Smooth scrolling mượt mà
-- **Responsive Design** - Tối ưu cho mọi thiết bị
-
-### 🔍 **SEO & Performance**
-- **SEO tối ưu** - Meta tags, Open Graph, Structured Data
-- **Core Web Vitals** - LCP, FID, CLS đạt chuẩn Google
-- **Image Optimization** - WebP, AVIF, lazy loading
-- **Caching Strategy** - Vercel Edge Network, CDN
+- 🎯 Tạo môi trường nghiên cứu chuyên nghiệp cho sinh viên
+- 💡 Khuyến khích đổi mới sáng tạo và phát triển công nghệ
+- 🤝 Kết nối sinh viên với các dự án thực tế
+- 📚 Nâng cao kỹ năng nghiên cứu khoa học
+- 🌐 Xây dựng cộng đồng CNTT VMU
 
 ---
 
-## 🛠️ **Công nghệ sử dụng**
+## ✨ Tính Năng Website
 
-| Category | Technology | Version | Purpose |
-|----------|------------|---------|---------|
-| **Framework** | Next.js | 15.4.6 | React framework với App Router |
-| **UI Library** | React | 19.1.0 | Component library |
-| **Animation** | GSAP | 3.13.0 | Professional animations |
-| **Smooth Scroll** | Lenis | 1.3.8 | Buttery smooth scrolling |
-| **Icons** | Heroicons | 2.2.0 | Professional icon set |
-| **Deployment** | Vercel | Latest | Edge deployment platform |
+### 🏠 Landing Page
+- **Neo-futuristic Hero**: Particle effects với thiết kế hiện đại
+- **Research Projects**: Showcase các dự án nghiên cứu đang thực hiện
+- **Team Members**: Giới thiệu đội ngũ nghiên cứu viên
+- **Tech Stack**: Công nghệ và công cụ sử dụng trong lab
+- **Publications**: Bài báo và công trình khoa học
+
+### 📱 Responsive Design
+- Tối ưu cho mọi thiết bị (Desktop, Tablet, Mobile)
+- Google-inspired minimal design
+- Maritime + Tech color scheme
+
+### 🎨 Animations
+- GSAP-powered smooth animations
+- Particle canvas effects
+- Scroll-triggered animations
+- Smooth page transitions
 
 ---
 
-## 🚀 **Cài đặt & Chạy dự án**
+## 🛠 Tech Stack
 
-### **Yêu cầu hệ thống**
-- Node.js >= 18.0.0
-- npm >= 8.0.0 hoặc pnpm >= 7.0.0
+### Frontend Framework
+- **Next.js 15.4.6** - React framework với App Router
+- **React 19.1.0** - UI library
+- **CSS Modules** - Component-scoped styling
 
-### **Cài đặt**
+### Animation & Effects
+- **GSAP 3.13.0** - Professional animation library
+- **Lenis 1.3.8** - Smooth scrolling
+- **Split Type 0.3.4** - Text animation effects
+
+### UI Components
+- **Heroicons 2.2.0** - Icon library
+- **React Icons 5.5.0** - Additional icons
+
+### Performance
+- **Critters 0.0.20** - Critical CSS inlining
+- **Next View Transitions 0.3.4** - Smooth page transitions
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18.x hoặc cao hơn
+- npm hoặc pnpm
+
+### Installation
+
 ```bash
 # Clone repository
-git clone https://github.com/meiiie/web_thanh_lap_truong.git
-cd web_thanh_lap_truong
+git clone https://github.com/vmu-research-lab/website.git
+cd website
 
-# Cài đặt dependencies
+# Install dependencies
 npm install
-# hoặc
-pnpm install
 
-# Chạy development server
+# Run development server
 npm run dev
-# hoặc
-pnpm dev
 ```
 
-### **Truy cập**
-Mở [http://localhost:3000](http://localhost:3000) để xem kết quả.
+Mở [http://localhost:3000](http://localhost:3000) để xem website.
 
 ---
 
-## 📁 **Cấu trúc dự án**
+## 📁 Project Structure
 
 ```
-src/
-├── app/                    # Next.js App Router
-│   ├── 70-nam/            # Trang kỷ niệm 70 năm
-│   ├── gioi-thieu/        # Giới thiệu về trường
-│   ├── su-kien/           # Lịch trình sự kiện
-│   ├── tam-nhin/          # Tầm nhìn tương lai
-│   ├── thu-vien/          # Thư viện tài liệu
-│   ├── tham-gia/          # Đăng ký tham gia
-│   └── layout.js          # Root layout
-├── components/             # React components
-│   ├── Timeline/          # Interactive timeline
-│   ├── FeaturedAchievements/ # Thành tựu nổi bật
-│   ├── CommunityVoices/   # Tiếng nói cộng đồng
-│   └── ...               # Các components khác
-├── hooks/                 # Custom React hooks
-└── public/               # Static assets
-    ├── logos/            # Logo và branding
-    ├── events/           # Hình ảnh sự kiện
-    └── ...              # Các assets khác
+vmu-research-lab/
+├── docs/                    # Documentation
+├── public/                  # Static assets
+│   └── images/             # Images
+├── src/
+│   ├── app/                # Next.js App Router
+│   │   ├── page.js        # Landing page
+│   │   ├── globals.css    # Global styles
+│   │   └── lab-theme.css  # Lab theme
+│   ├── components/         # React components
+│   │   ├── Nav/           # Navigation
+│   │   └── lab/           # Lab-specific components
+│   │       ├── HeroLab/
+│   │       ├── ProjectCard/
+│   │       ├── TeamMemberCard/
+│   │       └── ...
+│   └── data/              # Data files
+│       ├── research-projects.js
+│       ├── team-members.js
+│       └── tech-stack.js
+├── package.json
+└── README.md
 ```
 
 ---
 
-## 🎨 **Design System**
+## 🎨 Design System
 
-### **Màu sắc chính**
-- **Primary:** `#003e80` - Xanh navy VMU
-- **Secondary:** `#00a0e3` - Xanh dương sáng
-- **Accent:** `#ffc20e` - Vàng nổi bật
-- **Text:** `#1a1a1a` - Đen chủ đạo
+### Color Palette
 
-### **Typography**
-- **Heading:** "BE PRO VIETNAM" - Font chữ chuyên nghiệp
-- **Body:** "Manrope" - Font chữ dễ đọc
-- **Code:** "DM Mono" - Font monospace
+```css
+/* Primary Colors - Maritime + Tech */
+--primary-blue: #0074D9;      /* VMU Blue */
+--primary-dark: #003B73;      /* Deep Ocean */
+--primary-teal: #00A896;      /* Tech Accent */
+
+/* Google-Style Grays */
+--gray-900: #202124;          /* Headings */
+--gray-700: #5f6368;          /* Body text */
+--gray-300: #e8eaed;          /* Borders */
+--gray-100: #f8f9fa;          /* Backgrounds */
+```
+
+### Typography
+
+```css
+/* Headings - Clean & Modern */
+h2 {
+  font-family: 'Be Vietnam Pro', 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #202124;
+  letter-spacing: -0.01em;
+}
+
+/* Body Text */
+p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #5f6368;
+}
+```
+
+### Spacing
+
+```css
+/* Sections */
+section {
+  padding: 120px 0;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  padding: 0 24px;
+}
+```
 
 ---
 
-## 📱 **Responsive Design**
+## 📝 Content Management
 
-| Breakpoint | Device | Layout |
-|------------|--------|--------|
-| `320px+` | Mobile | Single column, stacked |
-| `768px+` | Tablet | Two columns, grid |
-| `1024px+` | Desktop | Multi-column, complex grid |
-| `1440px+` | Large Desktop | Full layout, max-width 1200px |
+### Adding Research Projects
+
+Edit `src/data/research-projects.js`:
+
+```javascript
+export const researchProjects = [
+  {
+    id: 1,
+    title: "Project Title",
+    description: "Brief description",
+    area: "AI & Machine Learning",
+    status: "ongoing", // or "completed"
+    techStack: ["Python", "TensorFlow"],
+    teamSize: 3,
+    startDate: "2024-01",
+    image: "/images/projects/project-1.jpg"
+  },
+  // Add more projects...
+];
+```
+
+### Adding Team Members
+
+Edit `src/data/team-members.js`:
+
+```javascript
+export const teamMembers = [
+  {
+    id: 1,
+    name: "Member Name",
+    role: "Team Lead", // or "Researcher", "Developer"
+    major: "Computer Science",
+    year: 3,
+    interests: ["AI", "Web Development"],
+    projects: 2,
+    publications: 1,
+    photo: "/images/team/member-1.jpg",
+    social: {
+      github: "https://github.com/username",
+      linkedin: "https://linkedin.com/in/username",
+      email: "email@vmu.edu.vn"
+    }
+  },
+  // Add more members...
+];
+```
+
+### Adding Technologies
+
+Edit `src/data/tech-stack.js`:
+
+```javascript
+export const techStack = {
+  "Frontend": [
+    {
+      name: "React",
+      icon: "⚛️",
+      color: "#61DAFB",
+      description: "UI Library"
+    },
+    // Add more...
+  ],
+  // More categories...
+};
+```
 
 ---
 
-## 🚀 **Deployment**
+## 🔧 Development
 
-### **Vercel (Recommended)**
+### Available Scripts
+
 ```bash
-# Deploy to Vercel
+npm run dev      # Start development server
+npm run build    # Build for production
+npm start        # Start production server
+npm run lint     # Run ESLint
+```
+
+### Component Guidelines
+
+#### Creating New Components
+
+```javascript
+'use client';
+
+import React from 'react';
+import './ComponentName.css';
+
+const ComponentName = ({ prop1, prop2 }) => {
+  return (
+    <div className="component-name">
+      {/* Component content */}
+    </div>
+  );
+};
+
+export default ComponentName;
+```
+
+#### Styling Guidelines
+
+```css
+/* Component styles */
+.component-name {
+  /* Layout */
+  display: flex;
+  
+  /* Box Model */
+  padding: 24px;
+  
+  /* Visual */
+  background: #ffffff;
+  border: 1px solid #e8eaed;
+  border-radius: 8px;
+  
+  /* Animation */
+  transition: all 0.2s ease;
+}
+
+.component-name:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+```
+
+---
+
+## 🌐 Deployment
+
+### Vercel (Recommended)
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+
+# Production
 vercel --prod
-
-# Hoặc connect GitHub repository với Vercel
-# 1. Import project từ GitHub
-# 2. Set build command: npm run build
-# 3. Set output directory: .next
-# 4. Deploy!
 ```
 
-### **Environment Variables**
-```env
-NEXT_PUBLIC_SITE_URL=https://kiniem70nam.vmu.holihu.online
-NEXT_PUBLIC_SITE_NAME="Kỷ niệm 70 năm VMU"
-NEXT_PUBLIC_EVENT_DATE="2025-09-06"
+### Manual Deployment
+
+```bash
+# Build
+npm run build
+
+# The output will be in .next/ folder
+# Deploy this folder to your hosting service
 ```
 
 ---
 
-## 📊 **Performance Metrics**
+## 📚 Documentation
 
-| Metric | Score | Status |
-|--------|-------|--------|
-| **Lighthouse Performance** | 95+ | ✅ Excellent |
-| **Lighthouse SEO** | 100 | ✅ Perfect |
-| **Lighthouse Accessibility** | 95+ | ✅ Excellent |
-| **Core Web Vitals** | All Green | ✅ Optimized |
+Xem thêm documentation chi tiết trong folder `docs/`:
+
+- **[CONTRIBUTING.md](docs/CONTRIBUTING.md)** - Hướng dẫn đóng góp
+- **[SETUP.md](docs/SETUP.md)** - Hướng dẫn cài đặt chi tiết
+- **[PROJECT-STRUCTURE.md](docs/PROJECT-STRUCTURE.md)** - Cấu trúc dự án
 
 ---
 
-## 🤝 **Đóng góp**
+## 🤝 Contributing
 
-Chúng tôi hoan nghênh mọi đóng góp để cải thiện dự án!
+Chúng tôi hoan nghênh mọi đóng góp! Xem [CONTRIBUTING.md](docs/CONTRIBUTING.md) để biết thêm chi tiết.
 
-### **Quy trình đóng góp**
+### Quick Contribution Guide
+
 1. Fork repository
-2. Tạo feature branch (`git checkout -b feature/AmazingFeature`)
+2. Create feature branch (`git checkout -b feature/AmazingFeature`)
 3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Tạo Pull Request
+5. Open Pull Request
 
 ---
 
-## 📄 **License**
+## 📞 Contact
 
-Dự án này được phát hành dưới [MIT License](LICENSE) - xem file `LICENSE` để biết thêm chi tiết.
+### VMU Student Research Lab
 
----
+- **Website**: https://lab.vmu.edu.vn
+- **Email**: research.lab@vmu.edu.vn
+- **Location**: Trường Đại học Hàng hải Việt Nam, Hải Phòng
 
-## 👥 **Team**
+### Social Media
 
-<div align="center">
-
-### **The Wiii Lab**
-*Nơi tạo ra những sản phẩm digital xuất sắc*
-
-**HoLiHu** - Lead Developer & Designer  
-*Chuyên gia về Web Development & UI/UX Design*
-
-[![GitHub](https://img.shields.io/badge/GitHub-HoLiHu-black?style=for-the-badge&logo=github)](https://github.com/meiiie)
-[![Portfolio](https://img.shields.io/badge/Portfolio-The%20Wiii%20Lab-blue?style=for-the-badge)](https://holihu.online)
-
-</div>
+- **Facebook**: [VMU Research Lab](https://facebook.com/vmu.research.lab)
+- **GitHub**: [VMU Research Lab](https://github.com/vmu-research-lab)
+- **LinkedIn**: [VMU Research Lab](https://linkedin.com/company/vmu-research-lab)
 
 ---
 
-## 📞 **Liên hệ**
+## 📄 License
 
-- **Email:** 70nam@vimaru.edu.vn
-- **Phone:** 0225.3.747.024
-- **Address:** 484 Lạch Tray, Ngô Quyền, Hải Phòng
-- **Website:** [kiniem70nam.vmu.holihu.online](https://kiniem70nam.vmu.holihu.online)
+Copyright © 2025 VMU Student Research Lab
 
 ---
 
-<div align="center">
+## 🙏 Acknowledgments
 
-### **🎉 Chúc mừng 70 năm thành lập VMU! 🎉**
+- **Trường Đại học Hàng hải Việt Nam** - Support và tài trợ
+- **Khoa Công Nghệ Thông Tin** - Hỗ trợ học thuật
+- **All Lab Members** - Đóng góp và phát triển
 
-*"Hành trình 70 năm - Vững bước tương lai"*
+---
 
-**Made with ❤️ by The Wiii Lab**
-
-</div>
+Made with ❤️ by VMU Student Research Lab Team

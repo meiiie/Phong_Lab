@@ -1,0 +1,237 @@
+.team-carousel {
+  position: relative;
+  width: 100%;
+  padding: 40px 0 64px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Carousel Container */
+.team-carousel-container {
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+  position: relative;
+  padding: 0 60px; /* Space for navigation */
+}
+
+.team-carousel-container:active {
+  cursor: grabbing;
+}
+
+/* Carousel Track */
+.team-carousel-track {
+  display: flex;
+  gap: 32px;
+  will-change: transform;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Carousel Item */
+.team-carousel-item {
+  flex-shrink: 0;
+  width: 300px;
+  user-select: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Subtle fade for non-active items */
+.team-carousel-item:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) {
+  opacity: 0.4;
+}
+
+.team-carousel-item:hover {
+  opacity: 1 !important;
+}
+
+/* Navigation Controls - Minimal & Elegant */
+.team-carousel-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.carousel-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #1a232c;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  pointer-events: all;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.carousel-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.carousel-btn:hover:not(:disabled) {
+  background: #ffffff;
+  border-color: rgba(0, 116, 217, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.carousel-btn:hover:not(:disabled) svg {
+  color: #0074D9;
+  transform: scale(1.1);
+}
+
+.carousel-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-btn-prev {
+  margin-left: 8px;
+}
+
+.carousel-btn-next {
+  margin-right: 8px;
+}
+
+/* Dots Indicator - Minimal & Subtle */
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 40px;
+}
+
+.carousel-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.12);
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 0;
+  position: relative;
+}
+
+.carousel-dot::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.carousel-dot:hover:not(.active) {
+  background: rgba(0, 0, 0, 0.24);
+  transform: scale(1.2);
+}
+
+.carousel-dot.active {
+  background: #1a232c;
+  width: 20px;
+  border-radius: 10px;
+}
+
+/* Counter - Clean & Minimal */
+.carousel-counter {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 0.8125rem;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.counter-current {
+  color: #1a232c;
+  font-weight: 600;
+}
+
+.counter-separator {
+  margin: 0 6px;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.counter-total {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .team-carousel-item {
+    width: 280px;
+  }
+
+  .carousel-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-carousel-item {
+    width: 260px;
+  }
+
+  .team-carousel-controls {
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel-dots {
+    gap: 6px;
+  }
+
+  .carousel-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .carousel-dot.active {
+    width: 20px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .team-carousel-container {
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+
+  .team-carousel-item {
+    scroll-snap-align: start;
+  }
+
+  .carousel-btn:hover:not(:disabled) {
+    transform: none;
+  }
+}

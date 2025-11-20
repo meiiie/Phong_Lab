@@ -1,0 +1,586 @@
+/* 🚀 VMU Student Research Lab - Neo-futuristic Theme */
+/* Dark theme with neon accents for modern tech aesthetic */
+
+:root {
+  /* ============================================
+     PRIMARY COLORS - Light Maritime Theme
+     ============================================ */
+  --lab-bg-primary: #ffffff;        /* Clean white - main background */
+  --lab-bg-secondary: #f8f9fa;      /* Light gray - sections */
+  --lab-bg-tertiary: #f1f3f4;       /* Card backgrounds */
+  --lab-bg-elevated: #ffffff;       /* Elevated elements (modals, dropdowns) */
+  
+  /* ============================================
+     MARITIME + TECH COLORS
+     ============================================ */
+  --lab-maritime-navy: #003B73;     /* Maritime navy - primary brand */
+  --lab-ocean-blue: #0074D9;        /* Ocean blue - secondary brand */
+  --lab-tech-cyan: #00D4FF;         /* Tech cyan - accent */
+  --lab-sea-teal: #00A896;          /* Sea teal - success */
+  --lab-sunset-orange: #FF6B35;     /* Sunset orange - warning */
+  --lab-sky-blue: #4D9DE0;          /* Sky blue - info */
+  
+  /* Legacy accent colors for compatibility */
+  --lab-accent-cyan: #00D4FF;
+  --lab-accent-purple: #003B73;
+  --lab-accent-pink: #0074D9;
+  --lab-accent-green: #00A896;
+  --lab-accent-orange: #FF6B35;
+  --lab-accent-blue: #4D9DE0;
+  
+  /* ============================================
+     TEXT COLORS - Light Theme
+     ============================================ */
+  --lab-text-primary: #1a232c;      /* Dark gray - headings, important content */
+  --lab-text-secondary: #5f6d7a;    /* Medium gray - body, descriptions */
+  --lab-text-muted: #8b95a1;        /* Light gray - labels, captions */
+  --lab-text-disabled: #c4cdd5;     /* Very light gray - disabled text */
+  
+  /* ============================================
+     GRADIENTS - Maritime + Tech Blends
+     ============================================ */
+  --lab-gradient-primary: linear-gradient(135deg, #003B73 0%, #0074D9 100%);
+  --lab-gradient-secondary: linear-gradient(135deg, #0074D9 0%, #00D4FF 100%);
+  --lab-gradient-accent: linear-gradient(135deg, #00A896 0%, #00D4FF 100%);
+  --lab-gradient-warm: linear-gradient(135deg, #FF6B35 0%, #0074D9 100%);
+  --lab-gradient-cool: linear-gradient(135deg, #4D9DE0 0%, #00D4FF 100%);
+  --lab-gradient-light: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+  
+  /* Radial gradients for special effects */
+  --lab-gradient-radial-blue: radial-gradient(circle, rgba(0, 116, 217, 0.1) 0%, transparent 70%);
+  --lab-gradient-radial-navy: radial-gradient(circle, rgba(0, 59, 115, 0.1) 0%, transparent 70%);
+  
+  /* ============================================
+     SHADOW EFFECTS - Subtle Light Theme
+     ============================================ */
+  --lab-shadow-sm: 0 1px 3px rgba(0, 59, 115, 0.1);
+  --lab-shadow-md: 0 4px 6px rgba(0, 59, 115, 0.1);
+  --lab-shadow-lg: 0 10px 15px rgba(0, 59, 115, 0.1);
+  --lab-shadow-xl: 0 20px 25px rgba(0, 59, 115, 0.15);
+  
+  /* Colored shadows for accents */
+  --lab-glow-cyan: 0 2px 8px rgba(0, 212, 255, 0.2);
+  --lab-glow-cyan-strong: 0 4px 12px rgba(0, 212, 255, 0.3);
+  --lab-glow-navy: 0 2px 8px rgba(0, 59, 115, 0.2);
+  --lab-glow-navy-strong: 0 4px 12px rgba(0, 59, 115, 0.3);
+  --lab-glow-blue: 0 2px 8px rgba(0, 116, 217, 0.2);
+  --lab-glow-blue-strong: 0 4px 12px rgba(0, 116, 217, 0.3);
+  
+  /* ============================================
+     OPACITY VARIANTS - Transparent Colors
+     ============================================ */
+  /* Navy variants */
+  --lab-navy-5: rgba(0, 59, 115, 0.05);
+  --lab-navy-10: rgba(0, 59, 115, 0.1);
+  --lab-navy-20: rgba(0, 59, 115, 0.2);
+  --lab-navy-30: rgba(0, 59, 115, 0.3);
+  --lab-navy-50: rgba(0, 59, 115, 0.5);
+  
+  /* Ocean Blue variants */
+  --lab-blue-5: rgba(0, 116, 217, 0.05);
+  --lab-blue-10: rgba(0, 116, 217, 0.1);
+  --lab-blue-20: rgba(0, 116, 217, 0.2);
+  --lab-blue-30: rgba(0, 116, 217, 0.3);
+  --lab-blue-50: rgba(0, 116, 217, 0.5);
+  
+  /* Cyan variants */
+  --lab-cyan-5: rgba(0, 212, 255, 0.05);
+  --lab-cyan-10: rgba(0, 212, 255, 0.1);
+  --lab-cyan-20: rgba(0, 212, 255, 0.2);
+  --lab-cyan-30: rgba(0, 212, 255, 0.3);
+  --lab-cyan-50: rgba(0, 212, 255, 0.5);
+  
+  /* Teal variants */
+  --lab-teal-5: rgba(0, 168, 150, 0.05);
+  --lab-teal-10: rgba(0, 168, 150, 0.1);
+  --lab-teal-20: rgba(0, 168, 150, 0.2);
+  --lab-teal-30: rgba(0, 168, 150, 0.3);
+  --lab-teal-50: rgba(0, 168, 150, 0.5);
+  
+  /* Background variants */
+  --lab-bg-primary-80: rgba(255, 255, 255, 0.8);
+  --lab-bg-primary-90: rgba(255, 255, 255, 0.9);
+  --lab-bg-primary-95: rgba(255, 255, 255, 0.95);
+}
+
+/* ============================================
+   UTILITY CLASSES - Background Colors
+   ============================================ */
+.lab-bg-primary { background-color: var(--lab-bg-primary); }
+.lab-bg-secondary { background-color: var(--lab-bg-secondary); }
+.lab-bg-tertiary { background-color: var(--lab-bg-tertiary); }
+.lab-bg-elevated { background-color: var(--lab-bg-elevated); }
+
+/* ============================================
+   UTILITY CLASSES - Text Colors
+   ============================================ */
+.lab-text-primary { color: var(--lab-text-primary); }
+.lab-text-secondary { color: var(--lab-text-secondary); }
+.lab-text-muted { color: var(--lab-text-muted); }
+.lab-text-disabled { color: var(--lab-text-disabled); }
+
+/* Accent text colors */
+.lab-text-cyan { color: var(--lab-accent-cyan); }
+.lab-text-purple { color: var(--lab-accent-purple); }
+.lab-text-pink { color: var(--lab-accent-pink); }
+.lab-text-green { color: var(--lab-accent-green); }
+
+/* ============================================
+   UTILITY CLASSES - Border Colors
+   ============================================ */
+.lab-border-cyan { border-color: var(--lab-accent-cyan); }
+.lab-border-purple { border-color: var(--lab-accent-purple); }
+.lab-border-pink { border-color: var(--lab-accent-pink); }
+.lab-border-green { border-color: var(--lab-accent-green); }
+.lab-border-muted { border-color: var(--lab-text-muted); }
+
+/* ============================================
+   UTILITY CLASSES - Gradients
+   ============================================ */
+.lab-gradient-primary { background: var(--lab-gradient-primary); }
+.lab-gradient-secondary { background: var(--lab-gradient-secondary); }
+.lab-gradient-accent { background: var(--lab-gradient-accent); }
+.lab-gradient-warm { background: var(--lab-gradient-warm); }
+.lab-gradient-cool { background: var(--lab-gradient-cool); }
+.lab-gradient-dark { background: var(--lab-gradient-dark); }
+
+/* ============================================
+   UTILITY CLASSES - Glow Effects
+   ============================================ */
+.lab-glow-cyan { box-shadow: var(--lab-glow-cyan); }
+.lab-glow-cyan-strong { box-shadow: var(--lab-glow-cyan-strong); }
+.lab-glow-purple { box-shadow: var(--lab-glow-purple); }
+.lab-glow-purple-strong { box-shadow: var(--lab-glow-purple-strong); }
+.lab-glow-pink { box-shadow: var(--lab-glow-pink); }
+.lab-glow-pink-strong { box-shadow: var(--lab-glow-pink-strong); }
+.lab-glow-green { box-shadow: var(--lab-glow-green); }
+.lab-glow-green-strong { box-shadow: var(--lab-glow-green-strong); }
+
+/* Text glow effects */
+.lab-text-glow-cyan { text-shadow: var(--lab-glow-cyan); }
+.lab-text-glow-purple { text-shadow: var(--lab-glow-purple); }
+.lab-text-glow-pink { text-shadow: var(--lab-glow-pink); }
+.lab-text-glow-green { text-shadow: var(--lab-glow-green); }
+
+/* ============================================
+   UTILITY CLASSES - Hover Effects
+   ============================================ */
+.lab-hover-glow-cyan:hover {
+  box-shadow: var(--lab-glow-cyan-strong);
+  border-color: var(--lab-accent-cyan);
+  transition: all 0.3s ease;
+}
+
+.lab-hover-glow-purple:hover {
+  box-shadow: var(--lab-glow-purple-strong);
+  border-color: var(--lab-accent-purple);
+  transition: all 0.3s ease;
+}
+
+.lab-hover-scale:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.lab-hover-lift:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+/* ============================================
+   TYPOGRAPHY SYSTEM - Modern Tech Fonts
+   ============================================ */
+
+/* Import modern fonts with Vietnamese support */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ============================================
+     FONT FAMILIES - Optimized for Vietnamese
+     ============================================ */
+  --font-primary: 'Be Vietnam Pro', 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Be Vietnam Pro', 'Space Grotesk', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  
+  /* ============================================
+     FONT SIZES - Fluid Typography with clamp()
+     ============================================ */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);      /* 12px - 14px */
+  --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);        /* 14px - 16px */
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);      /* 16px - 18px */
+  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);        /* 18px - 24px */
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.875rem);      /* 20px - 30px */
+  --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 2.25rem);          /* 24px - 36px */
+  --text-3xl: clamp(1.875rem, 1.5rem + 1.875vw, 3rem);       /* 30px - 48px */
+  --text-4xl: clamp(2.25rem, 1.8rem + 2.25vw, 3.75rem);      /* 36px - 60px */
+  --text-5xl: clamp(3rem, 2.4rem + 3vw, 4.5rem);             /* 48px - 72px */
+  --text-6xl: clamp(3.75rem, 3rem + 3.75vw, 6rem);           /* 60px - 96px */
+  
+  /* ============================================
+     FONT WEIGHTS
+     ============================================ */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  
+  /* ============================================
+     LINE HEIGHTS
+     ============================================ */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+  
+  /* ============================================
+     LETTER SPACING
+     ============================================ */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+}
+
+/* ============================================
+   TYPOGRAPHY UTILITY CLASSES
+   ============================================ */
+
+/* Font families */
+.font-primary { font-family: var(--font-primary); }
+.font-heading { font-family: var(--font-heading); }
+.font-mono { font-family: var(--font-mono); }
+
+/* Font sizes */
+.text-xs { font-size: var(--text-xs); }
+.text-sm { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-lg { font-size: var(--text-lg); }
+.text-xl { font-size: var(--text-xl); }
+.text-2xl { font-size: var(--text-2xl); }
+.text-3xl { font-size: var(--text-3xl); }
+.text-4xl { font-size: var(--text-4xl); }
+.text-5xl { font-size: var(--text-5xl); }
+.text-6xl { font-size: var(--text-6xl); }
+
+/* Font weights */
+.font-light { font-weight: var(--font-light); }
+.font-normal { font-weight: var(--font-normal); }
+.font-medium { font-weight: var(--font-medium); }
+.font-semibold { font-weight: var(--font-semibold); }
+.font-bold { font-weight: var(--font-bold); }
+.font-extrabold { font-weight: var(--font-extrabold); }
+
+/* Line heights */
+.leading-none { line-height: var(--leading-none); }
+.leading-tight { line-height: var(--leading-tight); }
+.leading-snug { line-height: var(--leading-snug); }
+.leading-normal { line-height: var(--leading-normal); }
+.leading-relaxed { line-height: var(--leading-relaxed); }
+.leading-loose { line-height: var(--leading-loose); }
+
+/* Letter spacing */
+.tracking-tighter { letter-spacing: var(--tracking-tighter); }
+.tracking-tight { letter-spacing: var(--tracking-tight); }
+.tracking-normal { letter-spacing: var(--tracking-normal); }
+.tracking-wide { letter-spacing: var(--tracking-wide); }
+.tracking-wider { letter-spacing: var(--tracking-wider); }
+.tracking-widest { letter-spacing: var(--tracking-widest); }
+
+/* Text transforms */
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }
+
+/* ============================================
+   HEADING STYLES - Pre-configured
+   ============================================ */
+.lab-heading-1 {
+  font-family: var(--font-heading);
+  font-size: var(--text-6xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--lab-text-primary);
+}
+
+.lab-heading-2 {
+  font-family: var(--font-heading);
+  font-size: var(--text-5xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--lab-text-primary);
+}
+
+.lab-heading-3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--lab-text-primary);
+}
+
+.lab-heading-4 {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-snug);
+  color: var(--lab-text-primary);
+}
+
+.lab-heading-5 {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-normal);
+  color: var(--lab-text-primary);
+}
+
+.lab-heading-6 {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-normal);
+  color: var(--lab-text-primary);
+}
+
+/* ============================================
+   BODY TEXT STYLES
+   ============================================ */
+.lab-body-large {
+  font-family: var(--font-primary);
+  font-size: var(--text-lg);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-relaxed);
+  color: var(--lab-text-secondary);
+}
+
+.lab-body {
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+  color: var(--lab-text-secondary);
+}
+
+.lab-body-small {
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+  color: var(--lab-text-secondary);
+}
+
+/* ============================================
+   SPECIAL TEXT STYLES
+   ============================================ */
+.lab-code {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  background-color: var(--lab-bg-tertiary);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  color: var(--lab-accent-cyan);
+}
+
+.lab-label {
+  font-family: var(--font-primary);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--lab-text-muted);
+}
+
+.lab-caption {
+  font-family: var(--font-primary);
+  font-size: var(--text-xs);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+  color: var(--lab-text-muted);
+}
+
+/* ============================================
+   SPACING SYSTEM - Consistent Scale
+   ============================================ */
+:root {
+  --space-0: 0;
+  --space-1: 0.25rem;    /* 4px */
+  --space-2: 0.5rem;     /* 8px */
+  --space-3: 0.75rem;    /* 12px */
+  --space-4: 1rem;       /* 16px */
+  --space-5: 1.25rem;    /* 20px */
+  --space-6: 1.5rem;     /* 24px */
+  --space-7: 1.75rem;    /* 28px */
+  --space-8: 2rem;       /* 32px */
+  --space-9: 2.25rem;    /* 36px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-11: 2.75rem;   /* 44px */
+  --space-12: 3rem;      /* 48px */
+  --space-14: 3.5rem;    /* 56px */
+  --space-16: 4rem;      /* 64px */
+  --space-20: 5rem;      /* 80px */
+  --space-24: 6rem;      /* 96px */
+  --space-28: 7rem;      /* 112px */
+  --space-32: 8rem;      /* 128px */
+  
+  /* ============================================
+     BORDER RADIUS - Rounded Corners
+     ============================================ */
+  --radius-none: 0;
+  --radius-sm: 0.25rem;    /* 4px */
+  --radius-md: 0.5rem;     /* 8px */
+  --radius-lg: 0.75rem;    /* 12px */
+  --radius-xl: 1rem;       /* 16px */
+  --radius-2xl: 1.5rem;    /* 24px */
+  --radius-3xl: 2rem;      /* 32px */
+  --radius-full: 9999px;   /* Circular */
+  
+  /* ============================================
+     SHADOWS - Elevation System
+     ============================================ */
+  /* Standard shadows */
+  --shadow-none: none;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  
+  /* Neon shadows (already defined above, but adding to this section for reference) */
+  /* --lab-glow-cyan, --lab-glow-purple, etc. */
+  
+  /* Combined shadows (standard + neon) */
+  --shadow-neon-cyan-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), var(--lab-glow-cyan);
+  --shadow-neon-cyan-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), var(--lab-glow-cyan-strong);
+  --shadow-neon-purple-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), var(--lab-glow-purple);
+  --shadow-neon-purple-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), var(--lab-glow-purple-strong);
+  
+  /* ============================================
+     TRANSITIONS - Timing Functions
+     ============================================ */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+  --transition-slower: 700ms ease;
+  
+  /* Easing functions */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* ============================================
+     Z-INDEX SCALE - Layering
+     ============================================ */
+  --z-0: 0;
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+}
+
+/* ============================================
+   SPACING UTILITY CLASSES
+   ============================================ */
+/* Padding */
+.p-0 { padding: var(--space-0); }
+.p-1 { padding: var(--space-1); }
+.p-2 { padding: var(--space-2); }
+.p-3 { padding: var(--space-3); }
+.p-4 { padding: var(--space-4); }
+.p-5 { padding: var(--space-5); }
+.p-6 { padding: var(--space-6); }
+.p-8 { padding: var(--space-8); }
+.p-10 { padding: var(--space-10); }
+.p-12 { padding: var(--space-12); }
+.p-16 { padding: var(--space-16); }
+.p-20 { padding: var(--space-20); }
+.p-24 { padding: var(--space-24); }
+
+/* Margin */
+.m-0 { margin: var(--space-0); }
+.m-1 { margin: var(--space-1); }
+.m-2 { margin: var(--space-2); }
+.m-3 { margin: var(--space-3); }
+.m-4 { margin: var(--space-4); }
+.m-5 { margin: var(--space-5); }
+.m-6 { margin: var(--space-6); }
+.m-8 { margin: var(--space-8); }
+.m-10 { margin: var(--space-10); }
+.m-12 { margin: var(--space-12); }
+.m-16 { margin: var(--space-16); }
+.m-20 { margin: var(--space-20); }
+.m-24 { margin: var(--space-24); }
+
+/* Gap (for flexbox/grid) */
+.gap-1 { gap: var(--space-1); }
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.gap-4 { gap: var(--space-4); }
+.gap-5 { gap: var(--space-5); }
+.gap-6 { gap: var(--space-6); }
+.gap-8 { gap: var(--space-8); }
+.gap-10 { gap: var(--space-10); }
+.gap-12 { gap: var(--space-12); }
+
+/* ============================================
+   BORDER RADIUS UTILITY CLASSES
+   ============================================ */
+.rounded-none { border-radius: var(--radius-none); }
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded-md { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-xl { border-radius: var(--radius-xl); }
+.rounded-2xl { border-radius: var(--radius-2xl); }
+.rounded-3xl { border-radius: var(--radius-3xl); }
+.rounded-full { border-radius: var(--radius-full); }
+
+/* ============================================
+   SHADOW UTILITY CLASSES
+   ============================================ */
+.shadow-none { box-shadow: var(--shadow-none); }
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+.shadow-2xl { box-shadow: var(--shadow-2xl); }
+.shadow-inner { box-shadow: var(--shadow-inner); }
+
+/* Neon shadows */
+.shadow-neon-cyan-sm { box-shadow: var(--shadow-neon-cyan-sm); }
+.shadow-neon-cyan-lg { box-shadow: var(--shadow-neon-cyan-lg); }
+.shadow-neon-purple-sm { box-shadow: var(--shadow-neon-purple-sm); }
+.shadow-neon-purple-lg { box-shadow: var(--shadow-neon-purple-lg); }
+
+/* ============================================
+   TRANSITION UTILITY CLASSES
+   ============================================ */
+.transition-fast { transition: all var(--transition-fast); }
+.transition-base { transition: all var(--transition-base); }
+.transition-slow { transition: all var(--transition-slow); }
+.transition-slower { transition: all var(--transition-slower); }
+
+.transition-colors { transition: color var(--transition-base), background-color var(--transition-base), border-color var(--transition-base); }
+.transition-transform { transition: transform var(--transition-base); }
+.transition-opacity { transition: opacity var(--transition-base); }
