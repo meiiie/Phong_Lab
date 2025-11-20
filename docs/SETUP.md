@@ -89,13 +89,11 @@ cd vmu-70-nam
 ### Bước 2: Cài Đặt Dependencies
 
 ```bash
-# Sử dụng npm
-npm install
-
-# Hoặc sử dụng pnpm (nhanh hơn)
-npm install -g pnpm
-pnpm install
+# Sử dụng npm với --legacy-peer-deps flag
+npm install --legacy-peer-deps
 ```
+
+**⚠️ Quan Trọng:** Dự án sử dụng React 19.1.0 với Next.js 15.4.6. Bạn **BẮT BUỘC** phải sử dụng `--legacy-peer-deps` flag để giải quyết dependency conflicts.
 
 **Lưu ý:** Quá trình cài đặt có thể mất 2-5 phút tùy vào tốc độ internet.
 
@@ -271,10 +269,24 @@ vmu-70-nam/
 ### Lỗi: "Cannot find module"
 
 ```bash
-# Xóa node_modules và cài lại
+# Xóa node_modules và cài lại với --legacy-peer-deps
 rm -rf node_modules package-lock.json
-npm install
+npm install --legacy-peer-deps
 ```
+
+### Lỗi: "ERESOLVE unable to resolve dependency tree"
+
+Đây là lỗi phổ biến do React 19 conflict với một số packages. **Giải pháp:**
+
+```bash
+# Sử dụng --legacy-peer-deps flag
+npm install --legacy-peer-deps
+```
+
+**Tại sao cần --legacy-peer-deps?**
+- Dự án sử dụng React 19.1.0 (mới nhất)
+- Một số packages (như next-view-transitions) chỉ support React 18
+- Flag `--legacy-peer-deps` cho phép npm bỏ qua peer dependency conflicts
 
 ### Lỗi: "Port 3000 is already in use"
 

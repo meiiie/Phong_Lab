@@ -189,6 +189,24 @@ Xem `docs/PROJECT-CLEANUP-SUMMARY.md` để review 10 components "có thể xóa
 
 ## 🛠 Development Commands
 
+### First Time Setup
+
+```bash
+# Clone repository
+git clone https://github.com/meiiie/Phong_Lab.git
+cd Phong_Lab
+
+# Install dependencies (IMPORTANT: use --legacy-peer-deps)
+npm install --legacy-peer-deps
+
+# Run development server
+npm run dev
+```
+
+**⚠️ Quan Trọng**: Phải sử dụng `--legacy-peer-deps` để giải quyết React 19 conflicts!
+
+### Regular Commands
+
 ```bash
 # Start development server
 npm run dev

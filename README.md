@@ -74,17 +74,19 @@ VMU Student Research Lab là phòng lab nghiên cứu khoa học dành cho sinh 
 
 ```bash
 # Clone repository
-git clone https://github.com/vmu-research-lab/website.git
-cd website
+git clone https://github.com/meiiie/Phong_Lab.git
+cd Phong_Lab
 
-# Install dependencies
-npm install
+# Install dependencies (use --legacy-peer-deps to resolve React 19 conflicts)
+npm install --legacy-peer-deps
 
 # Run development server
 npm run dev
 ```
 
 Mở [http://localhost:3000](http://localhost:3000) để xem website.
+
+**⚠️ Lưu ý**: Dự án sử dụng React 19.1.0 với Next.js 15.4.6. Nếu gặp lỗi dependency conflict, hãy sử dụng `--legacy-peer-deps` flag khi cài đặt.
 
 ---
 
