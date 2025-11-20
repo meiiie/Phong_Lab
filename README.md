@@ -66,6 +66,8 @@ VMU Student Research Lab là phòng lab nghiên cứu khoa học dành cho sinh 
 
 ## 🚀 Quick Start
 
+**👉 Xem [QUICK-START.md](QUICK-START.md) để bắt đầu nhanh trong 5 phút!**
+
 ### Prerequisites
 - Node.js 18.x hoặc cao hơn
 - npm hoặc pnpm
